@@ -15,6 +15,9 @@ public interface FavoritesService extends IService<Favorites>{
      */
     List<Long> getMovieIdlist(HttpServletRequest request);
 
+    /*
+    * 添加或取消收藏的电影
+    * */
     void add(HttpServletRequest request, Long id);
 
 }

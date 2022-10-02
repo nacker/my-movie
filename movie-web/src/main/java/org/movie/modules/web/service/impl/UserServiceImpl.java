@@ -58,25 +58,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      */
     @Override
     public User getAdminByUsername(String username) {
-//        User user = adminCacheService.getAdmin(username);
-//        if(user!=null) return  admin;
-//        QueryWrapper<User> wrapper = new QueryWrapper<>();
-//        wrapper.lambda().eq(User::getUsername,username);
-//        List<User> adminList = list(wrapper);
-//        if (adminList != null && adminList.size() > 0) {
-//            user = adminList.get(0);
-//            adminCacheService.setAdmin(admin);
-//            return user;
-//        }
-//        return null;
-
         User user = null;
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getUsername,username);
         List<User> userList = list(wrapper);
         if (userList != null && userList.size() > 0) {
             user = userList.get(0);
-//            adminCacheService.setAdmin(admin);
             return user;
         }
         return null;

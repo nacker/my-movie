@@ -64,17 +64,13 @@ public class UserController {
         if (login == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
-//        session.setAttribute(ComConstants.FLAG_CURRENT_USER,login);
 
         UserVo vo = new UserVo();
-//        BeanUtils.copyProperties(login, vo);
-
         String userName = login.getUsername();
         String token = tokenHead + " " + jwtTokenUtil.generateUserNameStr(userName);
         vo.setToken(token);
 
         String key = REDIS_DATABASE + ":" + REDIS_KEY_ADMIN + ":" + userName;
-//        redisService.get(key);
         redisService.set(key, token, REDIS_EXPIRE);
 
         return CommonResult.success(vo);
