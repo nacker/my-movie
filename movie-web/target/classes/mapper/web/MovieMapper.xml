@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.movie.modules.web.mapper.MovieMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.movie.modules.web.model.Movie">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="hot" property="hot" />
+        <result column="image_name" property="imageName" />
+        <result column="name" property="name" />
+        <result column="publish_date" property="publishDate" />
+    </resultMap>
+
+    <!--    <select id="getAdminIdList" resultType="java.lang.Long">-->
+    <!--        SELECT-->
+    <!--            DISTINCT ar.admin_id-->
+    <!--        FROM-->
+    <!--            ums_role_resource_relation rr-->
+    <!--                LEFT JOIN ums_admin_role_relation ar ON rr.role_id = ar.role_id-->
+    <!--        WHERE rr.resource_id=#{resourceId}-->
+    <!--    </select>-->
+
+</mapper>
